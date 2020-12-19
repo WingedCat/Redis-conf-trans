@@ -71,7 +71,7 @@ bind 127.0.0.1
 # 服务器仅接受来自客户端的连接，该客户端从IPv4和IPv6回环地址
 # 127.0.0.1和 ::1 ，以及Unix域套接字进行连接。
 #
-# 默认情况下保护模式是开启的。仅当您确定您希望其他主机的客户端（未配置身份验证）连接到Redis时，By default protected mode is enabled. You should disable it only if
+# 默认情况下保护模式是开启的。仅当您确定您希望其他主机的客户端（未配置身份验证）连接到Redis时，
 # 才应该禁用它，也不会使用"bind"指令显式列出一组特定的接口。
 protected-mode yes
 
@@ -187,10 +187,10 @@ tcp-keepalive 300
 daemonize no
 
 # 若从upstart或systemd运行Redis，则Redis可以与监控树交互。
-#   supervised no      -无相互监督
-#   supervised upstart - 使Redis进入SIGSTOP模式并监控upstart
-#   supervised systemd - 通过设置READY=1到$NOTIFY_SOCKET来监控systemd
-#   supervised auto    - 基于UPSTART_JOB或NOTIFY_SOCKET环境变量的监督自动检测upstart或systemd方法
+#   supervised no      -无相互监督
+#   supervised upstart - 使Redis进入SIGSTOP模式并监控upstart
+#   supervised systemd - 通过设置READY=1到$NOTIFY_SOCKET来监控systemd
+#   supervised auto    - 基于UPSTART_JOB或NOTIFY_SOCKET环境变量的监督自动检测upstart或systemd方法
 #
 # 注意: 这些监督方法仅表示“过程已准备就绪”。
 #       它们无法是您的监督者连续进行ping操作。
@@ -205,7 +205,7 @@ supervised no
 pidfile /var/run/redis_6379.pid
 
 # 指定服务器日志级别。
-# 可以是一下之一:
+# 可以是以下之一:
 # debug (很多信息，对于开发/测试很有用)
 # verbose (many rarely useful info, but not a mess like the debug level)
 # notice (moderately verbose, what you want in production probably)
@@ -488,7 +488,7 @@ replica-priority 100
 #   Port: 该端口在握手期间由副本进行通信，通常是副本用来侦听连接的端口。
 #
 # 但是，当使用端口转发或网络地址转换(NAT)时，实际上可以通过不同的IP和端口访问该副本。
-# 副本可以使用一下两个选项，以便向Master节点报告IP和端口。INFO和ROLE命令将报告这些值。
+# 副本可以使用以下两个选项，以便向Master节点报告IP和端口。INFO和ROLE命令将报告这些值。
 #
 # 如果只需要覆盖端口或IP地址，则无需使用这两个选项。
 #
@@ -908,10 +908,8 @@ lua-time-limit 5000
 #
 # cluster-config-file nodes-6379.conf
 
-# 集群节点超时时间是一个节点不可达的毫秒数，才能将其视为故障状态。Cluster node timeout is the amount of milliseconds a node must be unreachable
-# 大多数内部时间限制是节点超时的倍数。for it to be considered in failure state.
-# Most other internal time limits are multiple of the node timeout.
-#
+# 集群节点超时时间是一个节点不可达的毫秒数，才能将其视为故障状态。
+# 大多数内部时间限制是节点超时的倍数。
 # cluster-node-timeout 15000
 
 # 如果发生故障的Master副本的数据看起来太旧，它将避免启动故障转移。
@@ -1098,7 +1096,7 @@ notify-keyspace-events ""
 
 # Redis包含RFC 1436（https://www.ietf.org/rfc/rfc1436.txt）中指定的Gopher协议的实现。
 #
-# Gopher协议在90年代后期非常流行。The Gopher protocol was very popular in the late '90s. It is an alternative
+# Gopher协议在90年代后期非常流行。
 # 它是Web的替代方法，服务器和客户端的实现是如此简单，以至于Redis服务器只用100行代码就实现了。
 #
 # What do you do with Gopher nowadays? Well Gopher never *really* died, and
